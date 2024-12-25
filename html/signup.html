@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link rel="stylesheet" href="./css/signup.css">
+</head>
+<body>
+    <div class="signup-container">
+        <h2>Sign Up</h2>
+        <form id="signupForm">
+            <div class="input-field">
+                <input type="text" id="name" placeholder=" " required>
+                <label for="name">Name</label>
+            </div>
+            <div class="input-field">
+                <input type="email" id="email" placeholder=" " required>
+                <label for="email">Email</label>
+            </div>
+            <div class="input-field">
+                <input type="password" id="password" placeholder=" " required>
+                <label for="password">Password</label>
+            </div>
+            <div class="input-field">
+                <input type="password" id="confirmPassword" placeholder=" " required>
+                <label for="confirmPassword">Confirm Password</label>
+            </div>
+            <a href="login.html"><button type="submit" class="signup-btn">Sign Up</button></a>
+        </form>
+    </div>
+
+    <script>
+        // Select the signup form
+        const signupForm = document.getElementById("signupForm");
+
+        // Add an event listener to handle form submission
+        signupForm.addEventListener("submit", function (event) {
+            // Prevent default submission
+            event.preventDefault();
+
+            // Get field values
+            const name = document.getElementById("name").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const password = document.getElementById("password").value.trim();
+            const confirmPassword = document.getElementById("confirmPassword").value.trim();
+
+            // Regular expression for email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            // Validate name
+            if (name === "") {
+                alert("Name cannot be empty.");
+                return;
+            }
+
+            // Validate email
+            if (!emailRegex.test(email)) {
+                alert("Please enter a valid email address.");
+                return;
+            }
+
+            // Validate password length
+            if (password.length < 6) {
+                alert("Password must be at least 6 characters long.");
+                return;
+            }
+
+            // Validate password match
+            if (password !== confirmPassword) {
+                alert("Passwords do not match.");
+                return;
+            }
+
+            // If all validations pass
+            alert("Signup successful!");
+            signupForm.submit(); // Proceed with form submission (or redirect)
+        });
+    </script>
+</body>
+</html>
