@@ -1,0 +1,110 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg,navy, black);
+    font-family: Arial, sans-serif;
+    color: #fff;
+}
+
+.login-container {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    width: 350px;
+    box-shadow: 0 0 20px rgba(255, 75, 129, 0.5), 0 0 30px rgba(255, 75, 129, 0.4);
+    border: 3px solid transparent;
+    position: relative;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 20px blue;
+    }
+    100% {
+        box-shadow: 0 0 30px aqua;
+    }
+}
+
+h2 {
+    color: aqua;
+    margin-bottom: 20px;
+}
+
+.input-field {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-field input {
+    width: 100%;
+    padding: 10px;
+    background: transparent;
+    border: 2px solid lightskyblue;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+.input-field input:focus {
+    border-color: aqua;
+    box-shadow: 0 0 10px aqua;
+}
+
+.input-field label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: #ccc;
+    font-size: 18px;
+    pointer-events: none;
+    transition: 0.3s ease;
+}
+
+.input-field input:focus + label,
+.input-field input:not(:placeholder-shown) + label {
+    top: -20px;
+    left: 5px;
+    color: aqua;
+    font-size: 15px;
+}
+
+.login-btn {
+    background: aqua;
+    border: none;
+    color: navy;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 5px #000;
+}
+
+.login-btn:hover {
+    background: cyan;
+    box-shadow: 0 0 20px #ff4f81;
+    color: #fff;
+    text-shadow: 0 0 10px #ff4f81;
+}
+.signup-link {
+    color:aqua; 
+    text-decoration: none; 
+    font-size: 16px; 
+    font-weight: bold; 
+    transition: color 0.3s ease, text-shadow 0.3s ease; 
+}
+
+.signup-link:hover {
+    color: #ff4f81; 
+    text-shadow: 0 0 10px #ff4f81; 
+    cursor: pointer; 
+}
+

@@ -1,0 +1,594 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(90deg,#0f0c29, navy);
+  color: #fff;
+  overflow-x: hidden;
+}
+/* Style for the loader */
+/* Style for the loader */
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* The lightning effect */
+.spinner {
+  width: 700px;
+  height: 500px;
+  background:aqua;
+  background-size: 400% 400%;
+  animation: lightning 5s ease-in-out infinite;
+  border-radius: 50%;
+}
+
+/* Lightning animation */
+@keyframes lightning {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.4;
+    background-position: 0% 0%;
+  }
+  25% {
+    transform: scale(1.2);
+    opacity: 1;
+    background-position: 100% 0%;
+  }
+  50% {
+    transform: scale(0.9);
+    opacity: 0.3;
+    background-position: 0% 100%;
+  }
+  75% {
+    transform: scale(1.1);
+    opacity: 0.8;
+    background-position: 100% 100%;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.5;
+    background-position: 0% 0%;
+  }
+}
+
+/* Hide loader after page load */
+#loader.hide {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1s;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background:rgb(24, 24, 107);
+  color: antiquewhite;
+  padding: 1px;
+  z-index: 1000;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+nav .logo {
+  width: 300px;
+  height: 100px;
+  margin-right: 505px;
+  display: block;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 30px;
+  border-radius: 5px;
+}
+
+nav ul li {
+  margin: 0 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+  color: aqua;
+  position: relative;
+  padding: 5px 10px;
+  display: inline-block;
+  transition: color 0.3s, text-shadow 0.3s, transform 0.3s;
+  text-shadow: 0 0 8px cyan, 0 0 12px blue;
+}
+
+nav ul li a:hover {
+  color: #fff;
+  transform: scale(1.1);
+  text-shadow: 0 0 15px cyan, 0 0 25px blue;
+}
+
+nav ul li a:hover::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: aqua;
+  transform: scaleX(1);
+  transition: transform 0.3s;
+}
+
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: aqua;
+  transform: scaleX(0);
+  transition: transform 0.3s;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.hero-content {
+  z-index: 1;
+  animation: fadeIn 2s ease-out;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: aqua;
+  text-shadow: 0 0 10px blue, 0 0 20px cyan;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.hero-content button {
+  background-color: aqua;
+  padding: 10px 20px;
+  border: none;
+  color:navy;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.3s ease;
+  box-shadow: 0 0 10px navy, 0 0 15px cyan;
+}
+
+.hero-content button:hover {
+  background-color: #00bfff;
+  color: #fff;
+  text-shadow: 0 0 10px #00bfff;
+  transform: scale(1.1);
+}
+
+.section {
+  padding: 50px 20px;
+  background:transparent;
+  text-align: center;
+  border-top: 2px solid aqua;
+  border-bottom: 2px solid aqua;
+  margin-top: -150px;
+}
+.section button{
+ background-color: aqua;
+  padding: 10px 20px;
+  border: none;
+  color:navy;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.3s ease;
+  box-shadow: 0 0 10px navy, 0 0 15px cyan;
+}
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: aqua;
+  text-shadow: 0 0 10px cyan, 0 0 20px blue;
+}
+
+.section p {
+  font-size: 1.1rem;
+  color: aqua;
+}
+
+footer {
+  background-color: transparent;
+  padding: 20px;
+  text-align: center;
+  color: aqua;
+  box-shadow: 0 -5px 15px rgba(0, 255, 255, 0.5);
+}
+
+footer .social-icons {
+  margin-bottom: 15px;
+}
+
+footer .social-icons a {
+  color: aqua;
+  margin: 0 10px;
+  font-size: 1.5rem;
+  transition: color 0.3s ease, transform 0.3s;
+}
+
+footer .social-icons a:hover {
+  color: white;
+  transform: scale(1.2);
+  text-shadow: 0 0 10px cyan, 0 0 20px blue;
+}
+
+footer p {
+  font-size: 1rem;
+}
+
+#scrollToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #00bfff;
+  border: none;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 20px;
+  cursor: pointer;
+  display: none;
+  transition: 0.3s ease;
+  box-shadow: 0 0 10px cyan, 0 0 20px blue;
+}
+
+#scrollToTop:hover {
+  background-color: #ff8c00;
+  box-shadow: 0 0 20px #ff8c00, 0 0 30px orange;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  .hero-content p {
+    font-size: 1rem;
+  }
+  nav ul {
+    flex-direction: column;
+  }
+}
+hr {
+  display: none;  /* This will hide all <hr> elements */
+}
+
+/* If the lines are borders around certain sections, target them specifically */
+.section {
+  border: none;  /* Removes any border around sections */
+}
+
+.card {
+  border: none;  /* Removes any border around cards */
+}
+/* Devices Section */
+.devices-section {
+  text-align: center;
+  padding: 2rem;
+  background:transparent;
+}
+.devices-section h2 {
+  margin-bottom: 20px;
+  font-size: 30px;
+  color: aqua;
+  text-shadow: 
+    0 0 5px aqua,
+    0 0 10px aqua,
+    0 0 15px cyan,
+    0 0 20px cyan;
+  transition: text-shadow 0.3s ease, color 0.3s ease;
+}
+
+.devices-section h2:hover {
+  text-shadow: 
+    0 0 15px aqua,
+    0 0 25px aqua,
+    0 0 35px cyan,
+    0 0 50px cyan;
+  color:navy; /* Optional color change on hover */
+}
+
+.device-cards {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card {
+  position: relative;
+  background: #fff;
+  border: 2px solid aqua;
+  border-radius: 10px;
+  padding: 20px;
+  width: 250px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+.card-icon {
+  font-size: 2rem; /* Adjust size as needed */
+}
+
+.social-icons i {
+  font-size: 2.5rem; /* Adjust size for footer icons */
+}
+
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid aqua;
+  border-radius: 10px;
+  animation: moveBorder 2.5s linear infinite;
+  z-index: -1;
+}
+
+@keyframes moveBorder {
+  0% {
+      clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+  }
+  25% {
+      clip-path: polygon(0% 0%, 100% 0%, 0% 100%, 0% 100%);
+  }
+  50% {
+      clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+  75% {
+      clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+  100% {
+      clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 0%);
+  }
+}
+
+/* Keyframes for card animations */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes cardHover {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Cards with animation */
+.device-cards .card {
+  background: transparent;
+  border: 2px solid cyan;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 0.5s ease-in-out;
+}
+
+/* Card hover effect */
+.device-cards .card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  animation: cardHover 0.6s ease-in-out;
+}
+
+/* Icon animation on hover */
+.device-cards .card:hover .card-icon {
+  animation: pulse 1s infinite;
+}
+
+/* Pulse effect for icons */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    color: aqua;
+  }
+  50% {
+    transform: scale(1.2);
+    color: cyan;
+  }
+  100% {
+    transform: scale(1);
+    color: aqua;
+  }
+}
+/* Testimonials Section */
+.testimonials-section {
+  text-align: center;
+  margin: 50px 0;
+  color: aqua;
+}
+
+marquee {
+  display: block;
+  padding: 20px 0;
+}
+
+marquee .testimonial {
+  display: inline-block;
+  background: transparent;
+  padding: 30px;
+  margin: 0 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 550px;
+  height: 150px;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: aqua;
+  position: relative;
+  overflow: hidden;
+}
+
+marquee .testimonial:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px solid cyan;
+  border-radius: 10px;
+  animation: loop-border 1s linear infinite;
+  z-index: -1; /* Ensure it stays behind the content */
+}
+
+marquee .testimonial:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+marquee .testimonial h4 {
+  color: aqua;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+marquee .testimonial p {
+  font-size: 1em;
+  color: aqua;
+}
+
+
+/* Contact Section */
+.contact-us-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;  /* Centers the content horizontally */
+  justify-content: center;  /* Centers the content vertically */
+  text-align: center;
+  padding: 40px 20px;
+  background: transparent; /* Optional background */
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 255, 255, 0.5);
+}
+
+.contact-us-section h2 {
+  font-size: 2.5rem;
+  color: aqua;
+  text-shadow: 0 0 10px cyan, 0 0 20px blue;
+  margin-bottom: 20px;
+}
+
+.contact-us-section p {
+  font-size: 1.2rem;
+  color: lightcyan;
+  margin-bottom: 30px;
+}
+
+.cta-button {
+  background-color: aqua;
+  color: navy;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 0 10px cyan, 0 0 20px blue;
+  transition: 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #00bfff;
+  color: #fff;
+  text-shadow: 0 0 10px cyan, 0 0 20px blue;
+  transform: scale(1.05);
+}
+
+.cta-button:focus {
+  outline: none;
+  box-shadow: 0 0 15px cyan, 0 0 25px blue;
+}
+
+
+@media screen and (max-width: 768px) {
+  .testimonials {
+    flex-direction: column;
+  }
+
+  .testimonial {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    width: 90%;
+  }
+}
+hr {
+  display: none;
+}
